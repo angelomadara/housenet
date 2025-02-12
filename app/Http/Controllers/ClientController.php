@@ -3,19 +3,30 @@
 namespace App\Http\Controllers;
 
 use App\Models\Client;
+use App\Service\ClientService;
 use Illuminate\Http\Request;
 
 class ClientController extends Controller
 {
     public function index(){
-        return view('clients.index');
+        $clients = Client::with('status')->get();
+
+        // format birth_date to human readable
+        foreach ($clients as $client) {
+            $client->birth_date = date('F d, Y', strtotime($client->birth_date));
+        }
+
+        // return $clients;
+        return view('clients.index',[
+            'clients' => $clients
+        ]);
     }
 
     public function create(){
         return view('clients.create');
     }
 
-    public function store(Request $request){
+    public function store(Request $request, ClientService $clientService){
         $request->validate([
             'first_name' => 'required',
             'last_name' => 'required',
@@ -23,12 +34,7 @@ class ClientController extends Controller
             'birth_date' => 'required',
         ]);
 
-        $client = new Client();
-        $client->first_name = $request->first_name;
-        $client->last_name = $request->last_name;
-        $client->middle_name = $request->middle_name;
-        $client->birth_date = $request->birth_date;
-        $client->save();
+        $response = $clientService->store($request);
 
         return redirect()->route('clients.index');
     }
