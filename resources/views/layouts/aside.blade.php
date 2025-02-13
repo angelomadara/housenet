@@ -2,8 +2,8 @@
     class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
     aria-label="Sidebar">
     <div class="shrink-0 flex items-center py- mx-auto px-4 sm:px-6 lg:px-8">
-        <a href="{{ route('dashboard') }}">
-            {{-- <x-application-logo class="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200" /> --}}
+        <a href="{{ route('dashboard') }}" class="">
+            <x-application-logo class="w-20" />
             {{-- <h1 class="font-bold text-4xl py-3">HOUSENET</h1> --}}
         </a>
     </div>

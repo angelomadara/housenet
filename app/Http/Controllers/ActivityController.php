@@ -9,16 +9,12 @@ use Illuminate\Http\Request;
 class ActivityController extends Controller
 {
     public function index(){
-        $activities = Activity::with('status')->get();
 
-        // format birth_date to human readable
-        foreach ($activities as $activity) {
-            $activity->start_date = date('F d, Y', strtotime($activity->start_date));
-        }
+        // $moday_activities =
 
         // return $activities;
         return view('activities.index',[
-            'activities' => $activities
+            // 'activities' => $activities
         ]);
     }
 
