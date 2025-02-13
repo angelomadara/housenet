@@ -4,7 +4,9 @@
             <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
                 {{ __('Page') }}
             </h2>
-            <a href="#" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Button</a>
+            <x-primary-link :href="route('activity.create')">
+                {{ __('Create') }}
+            </x-primary-link>
         </div>
     </x-slot>
 
