@@ -2,9 +2,9 @@
     <x-slot name="header">
         <div class="flex items-center justify-between">
             <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-                {{ __('Activities') }}
+                {{ __('Page') }}
             </h2>
-            <a href="{{ route('activity.create') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Add Activity</a>
+            <a href="#" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Button</a>
         </div>
     </x-slot>
 
@@ -14,7 +14,9 @@
                 <div class="p-6 text-gray-900 dark:text-gray-100">
 
                     <div class="">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error sunt quam perferendis. Dignissimos laboriosam error cum ullam accusamus repellendus iure sequi, quod cumque doloremque. Magnam officia facilis itaque praesentium provident.
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error sunt quam perferendis.
+                        Dignissimos laboriosam error cum ullam accusamus repellendus iure sequi, quod cumque doloremque.
+                        Magnam officia facilis itaque praesentium provident.
                     </div>
 
                 </div>
