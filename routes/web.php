@@ -17,7 +17,7 @@ Route::middleware(["auth", "verified"])->group(function () {
     Route::delete("/profile", [ProfileController::class, "destroy"])->name("profile.destroy");
 
     Route::get("/activities", [App\Http\Controllers\ActivityController::class,"index"])->name("activity.index");
-    Route::get("/activies/create", [App\Http\Controllers\ActivityController::class,"create"])->name("activity.create");
+    Route::get("/activities/create", [App\Http\Controllers\ActivityController::class,"create"])->name("activity.create");
     Route::post("/activities", [App\Http\Controllers\ActivityController::class,"store"])->name("activity.store");
 
     // Clients route

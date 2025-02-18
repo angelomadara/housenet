@@ -20,15 +20,15 @@
                             @csrf
 
                             <div class="mb-4">
-                                <x-label for="date" :value="__('Day')" />
-                                <x-select-input id="date" name="date" type="date" class="mt-1 block w-full" :value="old('date')" required autofocus >
-                                    <option value="Monday">Monday</option>
-                                    <option value="Tuesday">Tuesday</option>
-                                    <option value="Wednesday">Wednesday</option>
-                                    <option value="Thursday">Thursday</option>
-                                    <option value="Friday">Friday</option>
-                                    <option value="Saturday">Saturday</option>
-                                    <option value="Sunday">Sunday</option>
+                                <x-label for="table" :value="__('Day')" />
+                                <x-select-input id="table" name="table" class="mt-1 block w-full" :value="old('table')" required autofocus >
+                                    <option value="activities_mondays">Monday</option>
+                                    <option value="activities_tuesdays">Tuesday</option>
+                                    <option value="activities_wednesdays">Wednesday</option>
+                                    <option value="activities_thursdays">Thursday</option>
+                                    <option value="activities_fridays">Friday</option>
+                                    <option value="activities_saturdays">Saturday</option>
+                                    <option value="activities_sundays">Sunday</option>
                                 </x-select-input>
                                 <x-input-error class="mt-2" :messages="$errors->get('first_name')" />
                             </div>
@@ -40,13 +40,13 @@
                             </div>
                             <div class="mb-4">
                                 <x-label for="activity" :value="__('Activity')" />
-                                <x-text-input id="activity" name="activity" type="text" class="mt-1 block w-full" :value="old('time')" required autofocus />
-                                <x-input-error class="mt-2" :messages="$errors->get('first_name')" />
+                                <x-text-input id="activity" name="activity" type="text" class="mt-1 block w-full" :value="old('activity')" required autofocus />
+                                <x-input-error class="mt-2" :messages="$errors->get('activity')" />
                             </div>
                             <div class="mb-4">
                                 <x-label for="guide" :value="__('Guide')" />
-                                <x-text-input id="guide" name="guide" type="text" class="mt-1 block w-full" :value="old('time')" required autofocus />
-                                <x-input-error class="mt-2" :messages="$errors->get('first_name')" />
+                                <x-text-input id="guide" name="guide" type="text" class="mt-1 block w-full" :value="old('guide')" required autofocus />
+                                <x-input-error class="mt-2" :messages="$errors->get('guide')" />
                             </div>
 
                             <div class="mt-6">

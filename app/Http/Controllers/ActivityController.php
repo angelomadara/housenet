@@ -23,14 +23,16 @@ class ActivityController extends Controller
     }
 
     public function store(Request $request, ActivityService $activityService){
+
         $request->validate([
-            'name' => 'required',
-            'description' => 'required',
-            'start_date' => 'required',
+            'table' => 'required',
+            'time' => 'required',
+            'activity' => 'required',
+            'guide' => 'required',
         ]);
 
         $response = $activityService->store($request);
 
-        return redirect()->route('activities.index');
+        return redirect()->route('activities.index', $response);
     }
 }
