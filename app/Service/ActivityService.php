@@ -21,31 +21,27 @@ class ActivityService
     public function store($data)
     {
         $table = $data->table;
-
-        if($table = 'activities_mondays'){
-            $table = ActivitiesMonday::class;
-        }
-
+        return $data->activity;
         switch($table){
-            case 'activities_mondays':
+            case 'activities_monday':
                 $table = ActivitiesMonday::class;
                 break;
-            case 'activities_tuesdays':
+            case 'activities_tuesday':
                 $table = ActivitiesTuesday::class;
                 break;
-            case 'activities_wednesdays':
+            case 'activities_wednesday':
                 $table = ActivitiesWednesday::class;
                 break;
-            case 'activities_thursdays':
+            case 'activities_thursday':
                 $table = ActivitiesThursday::class;
                 break;
-            case 'activities_fridays':
+            case 'activities_friday':
                 $table = ActivitiesFriday::class;
                 break;
-            case 'activities_saturdays':
+            case 'activities_saturday':
                 $table = ActivitiesSaturday::class;
                 break;
-            case 'activities_sundays':
+            case 'activities_sunday':
                 $table = ActivitiesSunday::class;
                 break;
             default:

@@ -61,21 +61,28 @@
                                     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                                         <tr>
                                             <th scope="col" class="px-6 py-3">
-                                                Name
+                                                Time
                                             </th>
                                             <th scope="col" class="px-6 py-3">
-                                                Birthdate
+                                                Activity
                                             </th>
                                             <th scope="col" class="px-6 py-3">
-                                                Status
-                                            </th>
-                                            <th scope="col" class="px-6 py-3">
-                                                Action
+                                                Guide
                                             </th>
                                         </tr>
                                     </thead>
                                     <tbody>
-
+                                        @forelse ($monday_activities as $activity)
+                                            <tr>
+                                                <td>{{$activity->time}}</td>
+                                                <td>{{$activity->activity}}</td>
+                                                <td>{{$activity->guide}}</td>
+                                            </tr>
+                                        @empty
+                                            <tr>
+                                                <td colspan="3" class="text-center">No activities found</td>
+                                            </tr>
+                                        @endforelse
 
                                     </tbody>
                                 </table>

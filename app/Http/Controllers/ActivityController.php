@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ActivitiesMonday;
 use App\Models\Activity;
 use App\Service\ActivityService;
 use Illuminate\Http\Request;
@@ -10,11 +11,11 @@ class ActivityController extends Controller
 {
     public function index(){
 
-        // $moday_activities =
+        $monday_activities = ActivitiesMonday::all();
 
         // return $activities;
         return view('activities.index',[
-            // 'activities' => $activities
+            'monday_activities' => $monday_activities
         ]);
     }
 
@@ -23,7 +24,7 @@ class ActivityController extends Controller
     }
 
     public function store(Request $request, ActivityService $activityService){
-
+        // return $request->all();
         $request->validate([
             'table' => 'required',
             'time' => 'required',
@@ -31,8 +32,8 @@ class ActivityController extends Controller
             'guide' => 'required',
         ]);
 
-        $response = $activityService->store($request);
+        return $response = $activityService->store($request);
 
-        return redirect()->route('activities.index', $response);
+        return redirect()->route('activity.index', $response);
     }
 }
